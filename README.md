@@ -25,7 +25,7 @@ If a certain file is selected in the JList, the selection of a different directo
 - Different language versions now solved by PropertyResourceBundle
 
 0.1.08.04 (April 2008)
- -Support of *.VIR files of the WESPHOA spectrometer.
+- Support of *.VIR files of the WESPHOA spectrometer.
  
 0.1.07.12 (December 2007)
 - Support of EAC_STEP files with right energy from the same type of files (stepper motor program version)
