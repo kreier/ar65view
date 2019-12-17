@@ -1,4 +1,7 @@
 # AR65view
+[![Build Status](https://travis-ci.com/kreier/ar65view.svg?branch=master)](https://travis-ci.com/kreier/ar65view)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![HitCount](http://hits.dwyl.io/kreier/ar65view.svg)](http://hits.dwyl.io/kreier/ar65view)
 
 The Java-Program ar65view.jar is intended to analyze and manipulate the photo emission data measured by the ARPES experiments AR65 and WESPHOA. Both are part of the work group EES by Prof. Manzke at the Department of Physics, Humboldt University to Berlin, Germany. The program is written in Java 1.5 and runs therefore under Windows as well as Linux and Mac OS.
 
@@ -18,6 +21,9 @@ The Java-Program ar65view.jar is intended to analyze and manipulate the photo em
 If a certain file is selected in the JList, the selection of a different directory leads to an error message. (The 'removeAktivation();' in bin.SpectraData( ) doesn't work ). FIX: Just restart the program.
 
 ## Release notes
+
+### 0.2.11.02 (February 2011)
+- Java webstart with JNLP added an new compiled, sourcecode available with SVN on sourceforge
 
 ### 0.2.11.01 (February 2011)
 - 'Shirley background' can easily be removed (without negative data)
