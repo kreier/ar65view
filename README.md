@@ -7,6 +7,8 @@
 The Java-Program ar65view.jar is intended to analyze and manipulate the photo emission data measured by the ARPES experiments AR65 and WESPHOA. Both are part of the work group EES by Prof. Manzke at the Department of Physics, Humboldt University to Berlin, Germany. The program is written in Java 1.5 and runs therefore under Windows as well as Linux and Mac OS.
 
 ## Features
+<img src="archive/AR65view1.jpg" align="right" width="40%">
+
 - Opens the *.1 files of EAC Software for Omicron AR65 files.
 - Opens the EAC_STEP files with right energy from the same type of files (stepper motor program version).
 - Opens the *.VIR files of the WESPHOA spectrometer.
