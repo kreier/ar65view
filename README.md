@@ -1,8 +1,8 @@
 # AR65view
+[![GitHub release](https://img.shields.io/github/release/kreier/ar65view.svg)](https://GitHub.com/kreier/ar65view/releases/)
+[![MIT license](https://img.shields.io/github/license/kreier/ar65view)](https://kreier.mit-license.org/)
 [![Build Status](https://travis-ci.com/kreier/ar65view.svg?branch=master)](https://travis-ci.com/kreier/ar65view)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![HitCount](http://hits.dwyl.io/kreier/ar65view.svg)](http://hits.dwyl.io/kreier/ar65view)
-
 
 The Java-Program ar65view.jar is intended to analyze and manipulate the photo emission data measured by the ARPES experiments AR65 and WESPHOA. Both are part of the work group EES by Prof. Manzke at the Department of Physics, Humboldt University to Berlin, Germany. The program is written in Java 1.5 and runs therefore under Windows as well as Linux and Mac OS.
 
