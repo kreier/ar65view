@@ -26,7 +26,7 @@ If a certain file is selected in the JList, the selection of a different directo
 ## Release notes
 
 ### 0.2.11.02 (February 2011)
-- Java webstart with JNLP added an new compiled, sourcecode available with SVN on sourceforge
+- Java webstart with JNLP added an new compiled, [sourcecode available](https://sourceforge.net/p/ar65view/code/HEAD/tree/) with SVN on [sourceforge](http://ar65view.sourceforge.net)
 
 ### 0.2.11.01 (February 2011)
 - 'Shirley background' can easily be removed (without negative data)
