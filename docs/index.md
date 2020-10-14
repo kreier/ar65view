@@ -41,7 +41,7 @@ If a certain file is selected in the JList, the selection of a different directo
 - Support of EAC_STEP files with right energy from the same type of files (stepper motor program version)
 - Energy export to clipboard and Normalize to 10000 implemented.
 
-<img src="archive/duke.gif" align="right">
+<img src="duke.gif" align="right">
 
 ### 0.1.07.10 (October 2007)
 - First successful Java Version, developed in Moscow.
