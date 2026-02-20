@@ -1,7 +1,7 @@
 # AR65view
 [![GitHub release](https://img.shields.io/github/release/kreier/ar65view.svg)](https://GitHub.com/kreier/ar65view/releases/)
 [![MIT license](https://img.shields.io/github/license/kreier/ar65view)](https://kreier.mit-license.org/)
-[![Build Status](https://travis-ci.com/kreier/ar65view.svg?branch=master)](https://travis-ci.com/kreier/ar65view)
+[![pages-build-deployment](https://github.com/kreier/ar65view/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/kreier/ar65view/actions/workflows/pages/pages-build-deployment)
 
 <img src="archive/java.png" align="right">
 
