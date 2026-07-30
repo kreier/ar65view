@@ -30,7 +30,9 @@ import java.io.*;
  */
 public class Aktion {
 
-    final static bin.SpectraData sp = bin.AR65view.spec;
+    final static bin.SpectraData sp() {
+        return bin.AR65view.spec;
+    }
     
     final static Icon newIcon16 = new ImageIcon(bin.AR65view.class.getResource("/pic/new16.png") ); 
     final static Icon newIcon22 = new ImageIcon(bin.AR65view.class.getResource("/pic/new22.png") ); 

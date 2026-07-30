@@ -16,11 +16,17 @@ import javax.imageio.ImageIO;
 public class AR65view {
   /** all methods of one SpectraData object are accessible 
    *  by the public AR65view.spec method */
-  public static SpectraData spec = new SpectraData();
-  public static Spectra spektrum = new Spectra();
-  public static File Quelldatei = new File( "." );
-  public static bin.gui.InfoBox infobox = new bin.gui.InfoBox();
-  public static JFrame Hauptfenster = null;
+//  public static SpectraData spec = new SpectraData();
+//  public static Spectra spektrum = new Spectra();
+//  public static File Quelldatei = new File( "." );
+//  public static bin.gui.InfoBox infobox = new bin.gui.InfoBox();
+//  public static JFrame Hauptfenster = null;
+  public static SpectraData spec;
+  public static Spectra spektrum;
+  public static File Quelldatei;
+  public static bin.gui.InfoBox infobox;
+  public static JFrame Hauptfenster;
+  
   
   /** simplify adding Components to the Container
    *  of the GridBagLayout
@@ -44,6 +50,10 @@ public class AR65view {
   
   public AR65view() 
   {
+        spec = new SpectraData();
+        spektrum = new Spectra();
+        Quelldatei = new File( "." );
+        infobox = new bin.gui.InfoBox();
     // First we create the main window with the specified characteristics 
     Hauptfenster = new JFrame( "Spectrum Viewer Omicron AR 65" ); 
     Hauptfenster.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE ); 
