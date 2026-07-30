@@ -67,15 +67,27 @@ public class Aktion {
     final static Icon export16 = new ImageIcon(bin.AR65view.class.getResource("/pic/export16.png") );
     final static Icon export22 = new ImageIcon(bin.AR65view.class.getResource("/pic/export22.png") );
 
-    // M?gliche Look & Feels
+    // Mögliche Look & Feels - 2006
     static final String mac      = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
     static final String metal    = "javax.swing.plaf.metal.MetalLookAndFeel";
     static final String motif    = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
     static final String windows  = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
     static final String gtk      = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
+    
+    // Updated possible Look & Feel 2026
+    static Map<String,String> lafMap = new LinkedHashMap<>();
+
+    static {
+        for (UIManager.LookAndFeelInfo info :
+                UIManager.getInstalledLookAndFeels()) {
+            lafMap.put(info.getName(), info.getClassName());
+        }
+    }
 
     // Aktuelles Look & Feel
-    static String currentLookAndFeel = metal;
+//    static String currentLookAndFeel = metal; // old 2006 code
+    static String currentLookAndFeel =
+    UIManager.getSystemLookAndFeelClassName();
 
     // Resource bundle for internationalized and accessible text (mal deutsch ...)
     static ResourceBundle bundle = null;
