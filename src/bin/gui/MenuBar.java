@@ -11,6 +11,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
+import javax.swing.ButtonGroup;
 import java.awt.event.*;
 
 
@@ -74,11 +75,20 @@ public class MenuBar extends JMenuBar
 //                        "LafMenu.motif_accessible_description", motif);
         LnFMenu = new JMenu(bin.Name.LOOK_AND_FEEL);
 
+        ButtonGroup group = new ButtonGroup();
+
         for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-            JRadioButtonMenuItem item = new JRadioButtonMenuItem(info.getName());
+
+            JRadioButtonMenuItem item =
+                new JRadioButtonMenuItem(info.getName());
+
+            group.add(item);
+
+            item.setActionCommand(info.getClassName());
 
             item.addActionListener(e ->
-                bin.perform.Aktion.setLookAndFeel(info.getClassName()));
+                bin.perform.Aktion.setLookAndFeel(
+                    e.getActionCommand()));
 
             item.setSelected(
                 UIManager.getLookAndFeel().getClass().getName()
@@ -97,7 +107,7 @@ public class MenuBar extends JMenuBar
     }
 
     /**
-     *  Erstellt einen JRadioButtonMenuItem f?r das L&F Men?
+     *  Erstellt einen JRadioButtonMenuItem für das L&F Menü
      */
     public JMenuItem createLafMenuItem(JMenu menu, String label, String mnemonic,
 			       String accessibleDescription, String laf) {

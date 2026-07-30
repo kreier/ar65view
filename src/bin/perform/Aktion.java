@@ -528,21 +528,21 @@ public class Aktion {
 	if ( !currentLookAndFeel.equals(laf)) {
 	    currentLookAndFeel = laf;
 
-            String lafName = null;
-            if(laf.equals(mac)) lafName = getString("LafMenu.mac_label");
-            if(laf.equals(metal)) lafName = getString("LafMenu.java_label");
-            if(laf.equals(motif)) lafName = getString("LafMenu.motif_label");
-            if(laf.equals(windows)) lafName = getString("LafMenu.windows_label");
-            if(laf.equals(gtk)) lafName = getString("LafMenu.gtk_label");
-
-            for(int i=0;i<bin.gui.MenuBar.LnFMenu.getItemCount();i++) {
-                JMenuItem item = bin.gui.MenuBar.LnFMenu.getItem(i);
-                if(item.getText().equals(lafName)) {
-                    item.setSelected(true);
-                } else {
-                    item.setSelected(false);
-                }
-            }
+//            String lafName = null;
+//            if(laf.equals(mac)) lafName = getString("LafMenu.mac_label");
+//            if(laf.equals(metal)) lafName = getString("LafMenu.java_label");
+//            if(laf.equals(motif)) lafName = getString("LafMenu.motif_label");
+//            if(laf.equals(windows)) lafName = getString("LafMenu.windows_label");
+//            if(laf.equals(gtk)) lafName = getString("LafMenu.gtk_label");
+//
+//            for(int i=0;i<bin.gui.MenuBar.LnFMenu.getItemCount();i++) {
+//                JMenuItem item = bin.gui.MenuBar.LnFMenu.getItem(i);
+//                if(item.getText().equals(lafName)) {
+//                    item.setSelected(true);
+//                } else {
+//                    item.setSelected(false);
+//                }
+//            }
 	    updateLookAndFeel();
 	}
     }
