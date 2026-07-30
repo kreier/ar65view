@@ -11,6 +11,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
+import javax.swing.ButtonGroup;
 import java.awt.event.*;
 
 
@@ -20,15 +21,17 @@ import java.awt.event.*;
 public class MenuBar extends JMenuBar
 {
     public static JMenu LnFMenu = null;
-    // M?gliche Look & Feels
-    static final String mac      = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
-    static final String metal    = "javax.swing.plaf.metal.MetalLookAndFeel";
-    static final String motif    = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
-    static final String windows  = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
-    static final String gtk      = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
+    // Mögliche Look & Feels
+//    static final String mac      = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
+//    static final String metal    = "javax.swing.plaf.metal.MetalLookAndFeel";
+//    static final String motif    = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+//    static final String windows  = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+//    static final String gtk      = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
 
     // Aktuelles Look & Feel
-    static String currentLookAndFeel = windows;
+//    static String currentLookAndFeel = windows;
+    static String currentLookAndFeel =
+    UIManager.getSystemLookAndFeelClassName();    
 
     /** Creates a new instance of MenuBar */
     public MenuBar() {
@@ -56,20 +59,43 @@ public class MenuBar extends JMenuBar
         editMenu.add( bin.perform.Aktion.exportSpectra );
         add( editMenu );
         
-        LnFMenu = new JMenu( bin.Name.LOOK_AND_FEEL );
-        LnFMenu.setMnemonic(bin.perform.Aktion.getMnemonic("LafMenu.laf_mnemonic"));
-        LnFMenu.getAccessibleContext().setAccessibleDescription(
-	    bin.perform.Aktion.getString("LafMenu.laf_accessible_description"));
-        createLafMenuItem(LnFMenu, "LafMenu.windows_label", "LafMenu.windows_mnemonic",
-                        "LafMenu.windows_accessible_description", windows);
-        createLafMenuItem(LnFMenu, "LafMenu.mac_label", "LafMenu.mac_mnemonic",
-                        "LafMenu.mac_accessible_description", mac);
-	createLafMenuItem(LnFMenu, "LafMenu.java_label", "LafMenu.java_mnemonic",
-		       "LafMenu.java_accessible_description", metal);
-        createLafMenuItem(LnFMenu, "LafMenu.gtk_label", "LafMenu.gtk_mnemonic",
-                        "LafMenu.gtk_accessible_description", gtk);
-        createLafMenuItem(LnFMenu, "LafMenu.motif_label", "LafMenu.motif_mnemonic",
-                        "LafMenu.motif_accessible_description", motif);
+//        LnFMenu = new JMenu( bin.Name.LOOK_AND_FEEL );
+//        LnFMenu.setMnemonic(bin.perform.Aktion.getMnemonic("LafMenu.laf_mnemonic"));
+//        LnFMenu.getAccessibleContext().setAccessibleDescription(
+//	    bin.perform.Aktion.getString("LafMenu.laf_accessible_description"));
+//        createLafMenuItem(LnFMenu, "LafMenu.windows_label", "LafMenu.windows_mnemonic",
+//                        "LafMenu.windows_accessible_description", windows);
+//        createLafMenuItem(LnFMenu, "LafMenu.mac_label", "LafMenu.mac_mnemonic",
+//                        "LafMenu.mac_accessible_description", mac);
+//	createLafMenuItem(LnFMenu, "LafMenu.java_label", "LafMenu.java_mnemonic",
+//		       "LafMenu.java_accessible_description", metal);
+//        createLafMenuItem(LnFMenu, "LafMenu.gtk_label", "LafMenu.gtk_mnemonic",
+//                        "LafMenu.gtk_accessible_description", gtk);
+//        createLafMenuItem(LnFMenu, "LafMenu.motif_label", "LafMenu.motif_mnemonic",
+//                        "LafMenu.motif_accessible_description", motif);
+        LnFMenu = new JMenu(bin.Name.LOOK_AND_FEEL);
+
+        ButtonGroup group = new ButtonGroup();
+
+        for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+
+            JRadioButtonMenuItem item =
+                new JRadioButtonMenuItem(info.getName());
+
+            group.add(item);
+
+            item.setActionCommand(info.getClassName());
+
+            item.addActionListener(e ->
+                bin.perform.Aktion.setLookAndFeel(
+                    e.getActionCommand()));
+
+            item.setSelected(
+                UIManager.getLookAndFeel().getClass().getName()
+                    .equals(info.getClassName()));
+
+            LnFMenu.add(item);
+        }
         add( LnFMenu );
         
         JMenu helpMenu = new JMenu( bin.Name.HELP );
@@ -81,7 +107,7 @@ public class MenuBar extends JMenuBar
     }
 
     /**
-     *  Erstellt einen JRadioButtonMenuItem f?r das L&F Men?
+     *  Erstellt einen JRadioButtonMenuItem für das L&F Menü
      */
     public JMenuItem createLafMenuItem(JMenu menu, String label, String mnemonic,
 			       String accessibleDescription, String laf) {
@@ -95,7 +121,7 @@ public class MenuBar extends JMenuBar
 	return mi;
     }    
     /**
-     * alte ?bernommene Beschreibung gel?scht ...
+     * alte übernommene Beschreibung gelöscht ...
      */
      protected boolean isAvailableLookAndFeel(String laf) {
          try {

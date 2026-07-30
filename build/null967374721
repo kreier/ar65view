@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.17
+Created-By: 26.0.1+8 (Eclipse Adoptium)
+Codebase: D:\archive\github\ar65view\dist
+Application-Library-Allowable-Codebase: D:\archive\github\ar65view\dis
+ t
+Caller-Allowable-Codebase: D:\archive\github\ar65view\dist
+Permissions: all-permissions
+Application-Name: AR65view
+

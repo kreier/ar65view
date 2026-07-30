@@ -43,7 +43,7 @@ public class Name {
                 
   public static void initDE() 
   {
-    OPEN = "?ffnen";
+    OPEN = "Öffnen";
     RandomAccessFile sprachdatei;
     String src = bin.AR65view.class.getResource("/data/deutsch.txt").toString();
     if( src.startsWith( "file:" ) ) {

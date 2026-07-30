@@ -67,15 +67,27 @@ public class Aktion {
     final static Icon export16 = new ImageIcon(bin.AR65view.class.getResource("/pic/export16.png") );
     final static Icon export22 = new ImageIcon(bin.AR65view.class.getResource("/pic/export22.png") );
 
-    // M?gliche Look & Feels
+    // Mögliche Look & Feels - 2006
     static final String mac      = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
     static final String metal    = "javax.swing.plaf.metal.MetalLookAndFeel";
     static final String motif    = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
     static final String windows  = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
     static final String gtk      = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
+    
+    // Updated possible Look & Feel 2026
+    static Map<String,String> lafMap = new LinkedHashMap<>();
+
+    static {
+        for (UIManager.LookAndFeelInfo info :
+                UIManager.getInstalledLookAndFeels()) {
+            lafMap.put(info.getName(), info.getClassName());
+        }
+    }
 
     // Aktuelles Look & Feel
-    static String currentLookAndFeel = metal;
+//    static String currentLookAndFeel = metal; // old 2006 code
+    static String currentLookAndFeel =
+    UIManager.getSystemLookAndFeelClassName();
 
     // Resource bundle for internationalized and accessible text (mal deutsch ...)
     static ResourceBundle bundle = null;
@@ -210,7 +222,7 @@ public class Aktion {
       public void actionPerformed( ActionEvent e ) { 
         JOptionPane.showMessageDialog( null, 
           "<HTML><H2>AR65view</H2>" +
-          "<H4>Version 0.2.11.02 (JNLP)</H4>" +
+          "<H4>Version 1.0.26.07</H4>" +
           "This progam can be used to analyse, view and modify<BR>" +
           "investigated data collected by the Omicron AR65 electron<BR>" +
           "spectrometer as well as the WESPHOA ARPES chamber,<BR>" +
@@ -224,7 +236,7 @@ public class Aktion {
           "useful, but <BR>WITHOUT ANY WARRANTY; without even the implied " +
           "warranty of <BR>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<BR> " +
           "See the GNU General Public License for more details.<BR>" +
-          "<BR>&copy; 2006-2011 Matthias Kreier</HTML>",      // Fragetext
+          "<BR>&copy; 2006-2026 Matthias Kreier</HTML>",      // Fragetext
           "Info zu AR65view",  // Titel 
            JOptionPane.OK_OPTION, 
            infoIcon );
@@ -249,7 +261,7 @@ public class Aktion {
       "a maximum of 10000 and then export all data to the clipboard. By Copy&Paste<BR>" +
       "you can now import this data to Origin, OtiPlot, LabPlot or SciDAVis or any<BR>" +
       "other Information Graphics Software (see Wikipedia) you like.<BR><BR>" +
-      "2011/02/02 </HTML>", // Fragetext
+      "2026/07/30 </HTML>", // Fragetext
       "How to use AR65view",  // Titel
       JOptionPane.OK_OPTION, helpIcon );
       } 
@@ -501,7 +513,7 @@ public class Aktion {
     }   
     /**
      * Returns the resource bundle associated with this program. Used
-     * to get accessable and internationalized strings. (sp?ter mal deutsch)
+     * to get accessable and internationalized strings. (später mal deutsch)
      */
     public static ResourceBundle getResourceBundle() {
 	if(bundle == null) {
@@ -516,21 +528,21 @@ public class Aktion {
 	if ( !currentLookAndFeel.equals(laf)) {
 	    currentLookAndFeel = laf;
 
-            String lafName = null;
-            if(laf.equals(mac)) lafName = getString("LafMenu.mac_label");
-            if(laf.equals(metal)) lafName = getString("LafMenu.java_label");
-            if(laf.equals(motif)) lafName = getString("LafMenu.motif_label");
-            if(laf.equals(windows)) lafName = getString("LafMenu.windows_label");
-            if(laf.equals(gtk)) lafName = getString("LafMenu.gtk_label");
-
-            for(int i=0;i<bin.gui.MenuBar.LnFMenu.getItemCount();i++) {
-                JMenuItem item = bin.gui.MenuBar.LnFMenu.getItem(i);
-                if(item.getText().equals(lafName)) {
-                    item.setSelected(true);
-                } else {
-                    item.setSelected(false);
-                }
-            }
+//            String lafName = null;
+//            if(laf.equals(mac)) lafName = getString("LafMenu.mac_label");
+//            if(laf.equals(metal)) lafName = getString("LafMenu.java_label");
+//            if(laf.equals(motif)) lafName = getString("LafMenu.motif_label");
+//            if(laf.equals(windows)) lafName = getString("LafMenu.windows_label");
+//            if(laf.equals(gtk)) lafName = getString("LafMenu.gtk_label");
+//
+//            for(int i=0;i<bin.gui.MenuBar.LnFMenu.getItemCount();i++) {
+//                JMenuItem item = bin.gui.MenuBar.LnFMenu.getItem(i);
+//                if(item.getText().equals(lafName)) {
+//                    item.setSelected(true);
+//                } else {
+//                    item.setSelected(false);
+//                }
+//            }
 	    updateLookAndFeel();
 	}
     }
