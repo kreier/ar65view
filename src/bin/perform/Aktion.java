@@ -210,7 +210,7 @@ public class Aktion {
       public void actionPerformed( ActionEvent e ) { 
         JOptionPane.showMessageDialog( null, 
           "<HTML><H2>AR65view</H2>" +
-          "<H4>Version 0.2.11.02 (JNLP)</H4>" +
+          "<H4>Version 1.0.26.07</H4>" +
           "This progam can be used to analyse, view and modify<BR>" +
           "investigated data collected by the Omicron AR65 electron<BR>" +
           "spectrometer as well as the WESPHOA ARPES chamber,<BR>" +
@@ -224,7 +224,7 @@ public class Aktion {
           "useful, but <BR>WITHOUT ANY WARRANTY; without even the implied " +
           "warranty of <BR>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<BR> " +
           "See the GNU General Public License for more details.<BR>" +
-          "<BR>&copy; 2006-2011 Matthias Kreier</HTML>",      // Fragetext
+          "<BR>&copy; 2006-2026 Matthias Kreier</HTML>",      // Fragetext
           "Info zu AR65view",  // Titel 
            JOptionPane.OK_OPTION, 
            infoIcon );
@@ -249,7 +249,7 @@ public class Aktion {
       "a maximum of 10000 and then export all data to the clipboard. By Copy&Paste<BR>" +
       "you can now import this data to Origin, OtiPlot, LabPlot or SciDAVis or any<BR>" +
       "other Information Graphics Software (see Wikipedia) you like.<BR><BR>" +
-      "2011/02/02 </HTML>", // Fragetext
+      "2026/07/30 </HTML>", // Fragetext
       "How to use AR65view",  // Titel
       JOptionPane.OK_OPTION, helpIcon );
       } 
@@ -501,7 +501,7 @@ public class Aktion {
     }   
     /**
      * Returns the resource bundle associated with this program. Used
-     * to get accessable and internationalized strings. (sp?ter mal deutsch)
+     * to get accessable and internationalized strings. (später mal deutsch)
      */
     public static ResourceBundle getResourceBundle() {
 	if(bundle == null) {
